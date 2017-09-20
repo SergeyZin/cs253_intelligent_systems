@@ -23,7 +23,10 @@ void Game::Run() {
 		case 80: 
 			Move(DOWN); 
 			break;
-		case 27:
+		case 114:	// r - restart
+			Init();
+			break;
+		case 27:	// escape
 			return;
 		}
 
@@ -77,6 +80,7 @@ void Game::CreateField() {
 
 void Game::DrawField() {
 	system("cls");
+	cout << "Press R to restart. \nPress esc to exit. \n\n";
 	for (int i = 0; i < 4; ++i)
 	{
 		for (int j = 0; j < 4; ++j)
